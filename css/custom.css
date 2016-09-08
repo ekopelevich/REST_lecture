@@ -1,0 +1,17 @@
+.title-over-gifs {
+  color: #1f1e2a !important;
+}
+
+.exercise {
+  background-color: #ffbf00;
+  text-align: left;
+  padding: 20px !important;
+}
+
+.exercise h4 {
+  color: #333;
+}
+
+.exercise .highlight {
+  color: #666;
+}

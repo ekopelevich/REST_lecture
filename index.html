@@ -12,6 +12,10 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<!-- Custom Styles -->
+		<link rel="stylesheet" href="css/custom.css">
+
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -24,8 +28,167 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background-image="benson.jpg">
+					<h1 >RESTFUL DESIGN</h1>
+				</section>
+
+				<section>
+
+					<h2>Objectives</h2>
+					<ul>
+						<li>Describe what REST is</li>
+						<li>Explain why REST is important</li>
+						<li>Explain how REST works</li>
+						<li>Create a RESTful Express server</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Independent Research - Part I</h2>
+					<ul>
+						<li>What is REST?</li>
+						<li>What are the 5 Constraints of REST?</li>
+						<li>What are the HTTP verbs commonly used in RESTful services?</li>
+						<li>Which HTTP methods are supported by forms?</li>
+						<li>What are the 5 RESTful routes of CRUD?</li>
+					</ul>
+				</section>
+
+				<section data-background-image="ducky.gif">
+					<h1 class="title-over-gifs">What is REST?</h1>
+				</section>
+
+				<section>
+					<h2>What is REST?</h2>
+					<p>REST is an architectural style of APIs, where the focus is on a specific set of interactions between the client and server, rather than implementation details. Its purpose is to induce performance, scalability, simplicity, modifiability, visibility, portability, and reliability.</p>
+				</section>
+
+				<section>
+					<h2>More about REST</h2>
+					<ul>
+						<li>REpresentational State Transfer - described by Roy Fielding in his doctoral dissertation in 2000</li>
+						<li>A service based on REST is called a RESTful service</li>
+						<li>Not dependent on any protocol, but almost every RESTful service uses HTTP</li>
+					</ul>
+				</section>
+
+				<section data-background-image="meerkats.gif">
+					<h1 class="title-over-gifs">What are the 5 Constraints of REST?</h1>
+				</section>
+
+				<section>
+					<h2>5 Constraints of REST</h2>
+					<ol>
+						<li>Client-Server</li>
+						<li>Stateless</li>
+						<li>Cacheable</li>
+						<li>Uniform Interface</li>
+						<li>Layered System</li>
+						<li>Code on Demand</li>
+					</ol>
+				</section>
+
+				<section data-background-image="panda.gif">
+					<h1><span class="title-over-gifs">Which HTTP methods are </span>supported by forms?</h1>
+				</section>
+
+				<section>
+					<h2>Which HTTP methods are supported by forms?</h2>
+					<ul>
+						<li>GET</li>
+						<li>POST</li>
+					</ul>
+				</section>
+
+				<section data-background-image="bunny.gif">
+					<h1 class="title-over-gifs">What are the HTTP verbs commonly used in RESTful services?</h1>
+				</section>
+
+				<section>
+					<h2>Commonly used HTTP Verbs</h2>
+					<ul>
+						<li>GET</li>
+						<li>POST</li>
+						<li>PUT</li>
+						<li>PATCH</li>
+						<li>DELETE</li>
+					</ul>
+				</section>
+
+				<section data-background-image="otter.gif">
+					<h1><span class="title-over-gifs">What are</span> the 5 <span class="title-over-gifs">RESTful</span> routes of CRUD?</h1>
+				</section>
+
+				<section>
+					<h2>The 5 RESTful Routes</h2>
+					<ul>
+						<li><code>app.get('/') - LIST - Get all</code></li>
+						<li><code>app.get('/:id') - READ - Get one</code></li>
+						<li><code>app.post('/') - CREATE - Post one</code></li>
+						<li><code>app.put('/:id') - UPDATE - Update one</code></li>
+						<li><code>app.delete('/:id') - DELETE - Delete one</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Exercise - Build an API</h2>
+					<div class="exercise">
+						<h4><span class="highlight">I do:</span> LIST (GET all)</h4>
+						<h4><span class="highlight">You do:</span> LIST (GET all) and READ (GET one)</h4>
+						<h4><span class="highlight">We do:</span> CREATE (POST one)</h4>
+						<h4><span class="highlight">You do:</span> PUT and DELETE (UPDATE and DELETE one)</h4>
+					</div>
+
+				</section>
+
+				<section>
+					<h2>Independent Research - Part II</h2>
+					<ul>
+						<li>What is the difference between server-side rendering and decoupled apps?</li>
+						<li>What are idempotent methods?</li>
+					</ul>
+				</section>
+
+				<section data-background-image="kitty.gif">
+					<h1 class="title-over-gifs">What is the difference between server-side rendering and decoupled apps?</h1>
+				</section>
+
+				<section>
+					<h2>Server-side Rendering vs Decoupled Apps</h2>
+					<ul>
+						<li>Server-side rendering means everything is served from the server - there is no client</li>
+						<li>Server-side means tightly coupled</li>
+						<li>Usually have 7 routes (not 5)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>What are idempotent methods?</h1>
+				</section>
+
+				<section>
+					<h2>Safe and Indempotent Methods</h2>
+					<ul>
+						<li>Safe operations do not have any effect on the original value of the resource</li>
+						<li>Idempotent operations give the same result no matter how many times you perform it</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="safe_indempotent.jpg" alt="WHich methods are safe or indempotent?" />
+				</section>
+
+				<section>
+					<h2>Review Objectives</h2>
+					<ul>
+						<li>Describe what REST is</li>
+						<li>Explain why REST is important</li>
+						<li>Explain how REST works</li>
+						<li>Create a RESTful Express server</li>
+					</ul>
+				</section>
+
+
 			</div>
 		</div>
 
