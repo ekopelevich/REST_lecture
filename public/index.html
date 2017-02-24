@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>REST</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Custom Styles -->
+		<link rel="stylesheet" href="css/custom.css">
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="title.gif">
+					<h1 class="title-over-gifs">REST</h1>
+				</section>
+				<section>
+					<h2>Objectives / Standards</h2>
+					<ul>
+						<li>Describe what REST is and why it is important</li>
+						<li>Discuss CRUD and relate it to REST concepts</li>
+						<li>Describe HATEOAS and why it's important</li>
+						<li>Create an API that...
+							<ul>
+								<li>Responds to verbs: GET, POST, PATCH, DELETE</li>
+								<li>Sends JSON responses that follows some sort of HATEOAS / JSONAPI </li>
+								<li>Sends error messages appropriately</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pair Discussion</h2>
+					<ul>
+						<li>What is REST?</li>
+						<li>What are the 5 Constraints of REST?</li>
+					</ul>
+				</section>
+
+				<section data-background-image="ducky.gif">
+					<h1 class="title-over-gifs">What is REST?</h1>
+				</section>
+
+				<section>
+					<h2>What is REST?</h2>
+					<ul>
+						<li>A preferred architectural style for APIs</li>
+						<li>Focus is on <span class="italic">interactions</span> between the client and server (rather than implementation details)</li>
+						<li>Improves performance, scalability, simplicity, modifiability, visibility, portability, and reliability</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>More about REST</h2>
+					<ul>
+						<li>REpresentational State Transfer - described by Roy Fielding in his doctoral dissertation in 2000</li>
+						<li>Not dependent on any protocol, but almost every RESTful service uses HTTP</li>
+					</ul>
+				</section>
+
+				<section data-background-image="meerkats.gif">
+					<h1 class="title-over-gifs">What are the 5 Constraints of REST?</h1>
+				</section>
+
+				<section>
+					<h2>5 Constraints of REST</h2>
+					<ol>
+						<li>Client-Server</li>
+						<li>Stateless</li>
+						<li>Cacheable</li>
+						<li>Uniform Interface</li>
+						<li>Layered System</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Client-Server</h2>
+					<img src="client-server.png" alt="client server diagram">
+				</section>
+
+				<section>
+					<h2>Stateless</h2>
+				</section>
+
+				<section>
+					<h2>Cacheable</h2>
+				</section>
+
+				<section>
+					<h2>Uniform Interface</h2>
+					<h3>Four Interface Constraints</h3>
+					<ul>
+						<li>Identification of resources</li>
+						<li>Manipulation of resources through representations</li>
+						<li>Self-descriptive messages</li>
+						<li>HATEOAS (hypermedia as the engine of application state)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Layered System</h2>
+					<img src="layered-system.png" alt="layered system diagram">
+				</section>
+
+				<section>
+					<h2>Pair Discussion</h2>
+					<ul>
+						<li>What exactly is HATEOAS?</li>
+						<li>What is json api?</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>HATEOAS</h2>
+					<h4>Hypermedia as the Engine of Application State</h4>
+					<ul>
+						<li>Response must contain actions that client can take based on the request
+							<ul>
+								<li>Allows clients to discover the structure of the API</li>
+							</ul>
+						</li>
+						<li>Commonly in a standardized structure like json api or HAL</li>
+						<li>Allows clients to create and update themselves</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="JSONAPI.png" alt="json api">
+				</section>
+
+				<section>
+					<h2>Pair Discussion</h2>
+					<ul>
+						<li>What are the verbs commonly used in RESTful services?</li>
+						<li>What are the 5 RESTful routes of CRUD?</li>
+					</ul>
+				</section>
+
+				<section data-background-image="bunny.gif">
+					<h1 class="title-over-gifs">What are the HTTP verbs commonly used in RESTful services?</h1>
+				</section>
+
+				<section>
+					<h2>Commonly used HTTP Verbs</h2>
+					<ul>
+						<li>GET</li>
+						<li>POST</li>
+						<li>PUT</li>
+						<li>PATCH</li>
+						<li>DELETE</li>
+					</ul>
+				</section>
+
+				<section data-background-image="otter.gif">
+					<h1><span class="title-over-gifs">What are</span> the 5 <span class="title-over-gifs">RESTful</span> routes of CRUD?</h1>
+				</section>
+
+				<section>
+					<h2>The 5 RESTful Routes of CRUD</h2>
+					<ul>
+						<li><code>app.get('/') - LIST - Get all</code></li>
+						<li><code>app.get('/:id') - READ - Get one</code></li>
+						<li><code>app.post('/') - CREATE - Post one</code></li>
+						<li><code>app.patch('/:id') - UPDATE - Update one</code></li>
+						<li><code>app.delete('/:id') - DELETE - Delete one</code></li>
+					</ul>
+				</section>
+
+				<section data-background-image="sloth.gif">
+					<h1>Are REST and CRUD the same thing?</h1>
+				</section>
+
+				<section>
+					<h1>Nope.</h1>
+					<p>REST is an architectural style for designing APIs and describes interaction between the CLIENT and SERVER</p>
+					<p>CRUD is a database concept that describes actions on data</p>
+					<p>They work together and are often conflated, but they are not the same thing.</p>
+				</section>
+
+				<section data-background-image="piggy.gif">
+					<h1 class="title-over-gifs">Status Codes</h1>
+				</section>
+
+				<section>
+					<h2>Status Codes</h2>
+					<ul>
+						<li>1xx - Informational</li>
+						<li>2xx - Success</li>
+						<li>3xx - Redirection</li>
+						<li>4xx - Client Error</li>
+						<li>5xx - Server Error</li>
+					</ul>
+				</section>
+
+				<section>
+					<div class="align-left">
+						<pre>res.status(403).end();</pre>
+						<pre>res.status(400).send('Bad Request');</pre>
+						<pre>res.status(404).sendFile('404.png');</pre>
+					</div>
+				</section>
+
+				<section>
+					<h2>Review Objectives</h2>
+					<ul>
+						<li>Describe what REST is and why it is important</li>
+						<li>Discuss CRUD and relate it to REST concepts</li>
+						<li>Describe HATEOAS and why it's important</li>
+						<li>Create an API that...
+							<ul>
+								<li>Responds to verbs: GET, POST, PATCH, DELETE</li>
+								<li>Sends JSON responses that follows some sort of HATEOAS / JSONAPI </li>
+								<li>Sends error messages appropriately</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
